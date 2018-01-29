@@ -151,31 +151,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-给自己的歌" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-预练js，必先攻css" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/20/给自己的歌/">给自己的歌</a>
+      <a class="article-title" href="/2018/01/29/预练js，必先攻css/">预练js，必先攻cs</a>
     </h1>
   
 
         
-        <a href="/2018/01/20/给自己的歌/" class="archive-article-date">
-  	<time datetime="2018-01-20T04:56:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+        <a href="/2018/01/29/预练js，必先攻css/" class="archive-article-date">
+  	<time datetime="2018-01-29T06:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="lt-成全-gt"><a href="#lt-成全-gt" class="headerlink" title="&lt;成全&gt;"></a>&lt;成全&gt;</h1><p>看着你和她走到我面前<br>微笑地对我说声好久不见<br>如果当初没有我的成全<br>是不是今天还在原地盘旋<br>不为了勉强可笑的尊严<br>所有的悲伤丢在分手那天<br>未必永远才算爱得完全<br>一个人的成全好过三个人的纠结<br>我对你付出的青春这么多年<br>换来了一句谢谢你的成全 </p>
-<p><img src="/images/hui.jpg" alt="Alt text"></p>
-        
-          <a class="article-more-a" href="/2018/01/20/给自己的歌/#more">more >></a>
-        
+        <p>下面来说一些，我平时比较注意的细节，技术点，和一些大家可能不是很熟悉的知识点。</p>
+<h2 id="box-sizing：border-box"><a href="#box-sizing：border-box" class="headerlink" title="box-sizing：border-box"></a>box-sizing：border-box</h2><p>box-sizing主要有俩个值content-box和border-box，先看下官方的解释：<br><img src="/images/p.jpg" alt="Alt text"><br>通俗一点来说，默认情况下，padding和border是会额外占据空间的，假如元素宽度是10px如果设置了1px border边距实际的宽度就是12px，padding同理。那么这样会导致，布局的宽高不好控制，计算也特别麻烦。所以我们会给全局的元素用上border-box，只要设置了宽高，那么border和padding无论怎么变化，元素的宽高都不会变，这样方便布局和计算。<br>*{box-sizing：border-box；}</p>
+<p>##左边固定 右边自适应<br>在布局的时候，比如一些列表页，常常左边是一个固定大小的缩略图，右边的剩余部分展示标题，如图<br><img src="/images/pp.jpg" alt="Alt text"><br>那我们就叫左边固定右边自适应的布局吧，我的方法 100%宽的div用padding-left把左边图片的位置留出来，div元素内容的部分就是标题，图片绝对定位到padding-left区域，这样就实现的左固定右自适应，（前提是box-sizing必须是border-box，否则padding加上100%宽会超出屏幕宽度），大致代码如下<br><img src="/images/zhi.jpg" alt="Alt text"></p>
+
       
 
       
@@ -187,7 +186,70 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/20/给自己的歌/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/01/29/预练js，必先攻css/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-郁闷，只能靠码字来发泄一下了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/23/郁闷，只能靠码字来发泄一下了/">郁闷，只能靠码字来发泄一下了</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/23/郁闷，只能靠码字来发泄一下了/" class="archive-article-date">
+  	<time datetime="2018-01-23T09:57:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h1><p>大多数编程语句中最常用的就是if语句。以下是if语句的语法。<br>if（condition）statement1 else statement1 else statement2<br>其中的condition（条件）可以使任意表达式；而且对这个表达式结果不一定是布尔类型的</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/23/郁闷，只能靠码字来发泄一下了/">展开全文 >></a>
         </p>
       
 
@@ -256,71 +318,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/01/20/写给自己的话/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-暂时不打算写关于学习的了。。。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/19/暂时不打算写关于学习的了。。。/">等下课的你</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/19/暂时不打算写关于学习的了。。。/" class="archive-article-date">
-  	<time datetime="2018-01-19T03:58:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　为了想与你不期而遇</p>
-        
-          <a class="article-more-a" href="/2018/01/19/暂时不打算写关于学习的了。。。/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/19/暂时不打算写关于学习的了。。。/">展开全文 >></a>
         </p>
       
 
