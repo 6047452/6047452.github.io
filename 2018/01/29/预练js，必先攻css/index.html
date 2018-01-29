@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://yoursite.com/images/p.jpg">
 <meta property="og:image" content="http://yoursite.com/images/pp.jpg">
 <meta property="og:image" content="http://yoursite.com/images/zi.jpg">
-<meta property="og:updated_time" content="2018-01-29T06:46:56.552Z">
+<meta property="og:updated_time" content="2018-01-29T06:48:34.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="预练js，必先攻cs">
 <meta name="twitter:description" content="下面来说一些，我平时比较注意的细节，技术点，和一些大家可能不是很熟悉的知识点。 box-sizing：border-boxbox-sizing主要有俩个值content-box和border-box，先看下官方的解释：通俗一点来说，默认情况下，padding和border是会额外占据空间的，假如元素宽度是10px如果设置了1px border边距实际的宽度就是12px，padding同理。那么这样">
@@ -179,7 +179,7 @@
       
         <p>下面来说一些，我平时比较注意的细节，技术点，和一些大家可能不是很熟悉的知识点。</p>
 <h2 id="box-sizing：border-box"><a href="#box-sizing：border-box" class="headerlink" title="box-sizing：border-box"></a>box-sizing：border-box</h2><p>box-sizing主要有俩个值content-box和border-box，先看下官方的解释：<br><img src="/images/p.jpg" alt="Alt text"><br>通俗一点来说，默认情况下，padding和border是会额外占据空间的，假如元素宽度是10px如果设置了1px border边距实际的宽度就是12px，padding同理。那么这样会导致，布局的宽高不好控制，计算也特别麻烦。所以我们会给全局的元素用上border-box，只要设置了宽高，那么border和padding无论怎么变化，元素的宽高都不会变，这样方便布局和计算。<br>*{box-sizing：border-box；}</p>
-<p>##左边固定 右边自适应<br>在布局的时候，比如一些列表页，常常左边是一个固定大小的缩略图，右边的剩余部分展示标题，如图<br><img src="/images/pp.jpg" alt="Alt text"><br>那我们就叫左边固定右边自适应的布局吧，我的方法 100%宽的div用padding-left把左边图片的位置留出来，div元素内容的部分就是标题，图片绝对定位到padding-left区域，这样就实现的左固定右自适应，（前提是box-sizing必须是border-box，否则padding加上100%宽会超出屏幕宽度），大致代码如下<br><img src="/images/zi.jpg" alt="Alt text"></p>
+<h2 id="左边固定-右边自适应"><a href="#左边固定-右边自适应" class="headerlink" title="左边固定 右边自适应"></a>左边固定 右边自适应</h2><p>在布局的时候，比如一些列表页，常常左边是一个固定大小的缩略图，右边的剩余部分展示标题，如图<br><img src="/images/pp.jpg" alt="Alt text"><br>那我们就叫左边固定右边自适应的布局吧，我的方法 100%宽的div用padding-left把左边图片的位置留出来，div元素内容的部分就是标题，图片绝对定位到padding-left区域，这样就实现的左固定右自适应，（前提是box-sizing必须是border-box，否则padding加上100%宽会超出屏幕宽度），大致代码如下<br><img src="/images/zi.jpg" alt="Alt text"></p>
 
       
 
@@ -272,6 +272,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/01/29/配置开发时前端工程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          前端的价值
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/23/郁闷，只能靠码字来发泄一下了/" id="article-nav-older" class="article-nav-link-wrap">
