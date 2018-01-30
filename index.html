@@ -151,6 +151,217 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="posts-javascrpt输出" class="article article-type-posts  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/30/javascrpt输出/">javascrpt输出</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/30/javascrpt输出/" class="archive-article-date">
+  	<time datetime="2018-01-30T04:56:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="javascript显示数据"><a href="#javascript显示数据" class="headerlink" title="javascript显示数据"></a>javascript显示数据</h1><p>javascript可以通过不同的方式来输出数据：</p>
+<ul>
+<li>使用window.alert() 弹出警告框。</li>
+<li>使用document.write()方法将内容写到HTML文档中。</li>
+<li>使用innerHTML写入到HTML元素。</li>
+<li>使用console.log()写入到浏览器的控制台。</li>
+</ul>
+<h1 id="使用window-alert"><a href="#使用window-alert" class="headerlink" title="使用window.alert()"></a>使用window.alert()</h1><p>你可以弹出警告框来显示数据：<br><img src="/images/alert.png" alt="Alt text"></p>
+<h1 id="操作HTML元素"><a href="#操作HTML元素" class="headerlink" title="操作HTML元素"></a>操作HTML元素</h1><p>如需从javascript访问某个HTML元素，您可以使用documrnt.getElementById(id)方法。<br>请使用id属性来标识HTML元素，并innerHTML来获取或插入元素内容：<br><img src="/images/html.png" alt="Alt text"><br>以上javascript语句可以在web浏览器中执行：<br>document.getELementById(‘demo’)是使用id属性来查找HTMl元素的javascript代码。<br>innerHTML=’段落已修改’是用于修改元素的HTMl内容（innerHTML）的javascript代码</p>
+<h1 id="写到控制台"><a href="#写到控制台" class="headerlink" title="写到控制台"></a>写到控制台</h1><p>如果您的浏览器支持调试，你可以使用console.log方法在浏览器中显示javascript值。<br>浏览器中使用f12来启用调试模式，在调试窗口中点击COnsole菜单。<br><img src="/images/console.png" alt="Alt text"></p>
+<h1 id="笔记列表"><a href="#笔记列表" class="headerlink" title="笔记列表"></a>笔记列表</h1><p>console.log的用处主要是方便你调试javascript用的，你可以看到你在页面中输出内容。<br>相比alert他的优点是：<br>他能看到结构化的东西，如果是alert，弹出一个对象就是object但是console.log能看到内容。<br>console.log不会打断你页面的操作，如果用alert弹出来内容，那么页面就死了，但是console.log输出出来你的页面还可以正常操作</p>
+<p>document.write是直接写入到页面的内容流，如果在写之前没有调用document.open, 浏览器会自动调用open。每次写完关闭之后重新调用该函数，会导致页面被重写。<br>innerHTML则是DOM页面元素的一个属性，代表该元素的html内容。你可以精确到某一个具体的元素来进行更改。如果想修改document的内容，则需要修改document.documentElement.innerElement。<br>innerHTML很多情况下都优于document.write，其原因在于其允许更精确的控制要刷新页面的那一个部分。</p>
+<p>DOM 解释<br>您会经常看到 document.getElementById(“id”)。<br>这个方法是 HTML DOM 中定义的。<br>DOM (Document Object Model)（文档对象模型）是用于访问 HTML 元素的正式 W3C 标准。<br>格式<script><br>那些老旧的实例可能会在 <script> 标签中使用 type=”text/javascript”。<br>现在已经不必这样做了。<br>JavaScript 是所有现代浏览器以及 HTML5 中的默认脚本语言。<br>脚本位置<br>在 <head> 或者 <body> 的JavaScript<br>外部脚本不能包含 <script> 标签。<br>输出数据<br>window.alert() 弹出警告框。<br>document.write() 方法将内容写到 HTML 文档中。<br>innerHTML 写入到 HTML 元素。<br>console.log() 写入到浏览器的控制台。<br>输出内容<br>使用 document.write() 向文档输出写内容。<br>如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖<br>写到控制台(调试模式)<br>使用 console.log() 方法在浏览器中显示 JavaScript 值。<br>F12 启用调试模式， 在调试窗口中点击 “Console” 菜单。</p>
+</script></p>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/30/javascrpt输出/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="posts-javascript用法" class="article article-type-posts  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/30/javascript用法/">javascript用法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/30/javascript用法/" class="archive-article-date">
+  	<time datetime="2018-01-30T04:43:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#&lt; script &gt;标签<br>如需在HTML页面中插入javascript，请使用script标签。<br>&lt; script &gt;和&lt; /script &gt;会告诉javascript在何处开始和结束。<br>&lt; script &gt;和&lt; /script &gt;之间的代码行包含了javascript：</p>
+<p>&lt; script &gt;<br>alert(‘这是我第一个javascript’);<br>&lt; /script &gt;</p>
+<p>您无需理解上面的代码。只需要明白浏览器会解释并执行位于&lt; script &gt;和&lt; /script &gt;之间的javascript代码。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/30/javascript用法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="posts-基于菜鸟教程的js" class="article article-type-posts  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/30/基于菜鸟教程的js/">基于菜鸟教程的js</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/30/基于菜鸟教程的js/" class="archive-article-date">
+  	<time datetime="2018-01-30T04:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="写这篇文章也算是加深一下自己的js功底吧"><a href="#写这篇文章也算是加深一下自己的js功底吧" class="headerlink" title="写这篇文章也算是加深一下自己的js功底吧"></a>写这篇文章也算是加深一下自己的js功底吧</h1><p>javascript是web的编程语言。<br>所有现代的HTML页面都使用javascript。<br>javascript非常容易学。<br>本教程教你学习从初级到高级javascript知识（是菜鸟教阿，不是俺）</p>
+<h1 id="为什么学习javascript？"><a href="#为什么学习javascript？" class="headerlink" title="为什么学习javascript？"></a>为什么学习javascript？</h1><p>javascript web 开发人员必须学习的3门语言中的一门：</p>
+<ol>
+<li>HTML定义了网页的内容</li>
+<li>CSS描述了网页的布局</li>
+<li>javascript网页的行为</li>
+</ol>
+<h1 id="谁适合阅读本教程？"><a href="#谁适合阅读本教程？" class="headerlink" title="谁适合阅读本教程？"></a>谁适合阅读本教程？</h1><p>1.如果你想学习javascript，您可以学习本教程：<br>了解javascript是如何与HTML和CSS一起工作的。<br>2.如果在此之前您已经使用过javascript，您也可以阅读本教程：<br>javascript一直在升级，所以我们需要时刻了解javascript的新技术。</p>
+<h1 id="阅读本教程钱，您需要了解的知识："><a href="#阅读本教程钱，您需要了解的知识：" class="headerlink" title="阅读本教程钱，您需要了解的知识："></a>阅读本教程钱，您需要了解的知识：</h1><p>阅读本教程，您需要有一下基础：<br>HTML和CSS基础</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/30/基于菜鸟教程的js/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端的价值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
