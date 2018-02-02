@@ -151,6 +151,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="postos-概观" class="article article-type-postos  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/02/概观/">概观</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/02/概观/" class="archive-article-date">
+  	<time datetime="2018-02-02T15:07:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>javascript是一个多范型的动态语言，包含类型和操作符，标准的内置对象和方法。<br>它的语法基于java和C语言-这些语言的许多结构也适用于 javascript。javascript支持使用对象原型进行面向对象的编程，而不是类（更多的了解原型继承和ES2015类）。javascript也支持函数式编程-函数是对象赋予函数保存可执行代码的能力，并像其他任何对象一样被传递。</p>
+<p>javascript的类型值是：</p>
+<ul>
+<li>Number</li>
+<li>string</li>
+<li>boolean</li>
+<li>Function</li>
+<li>Object</li>
+<li>symbol（ES2015新增）</li>
+<li>null</li>
+<li>undefined</li>
+</ul>
+<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p>根据规范，javascript中的数字是双精度64位格式IEEE754值。还有一些有趣的结果。在javascript中没有这样的整数，所以如果你习惯用C或者java来进行数学运算的话，你必须要小心一点。<br>另外注意这样的东西：</p>
+<p>0.1+0.22 == 0.30000000000000004;</p>
+<p>在实践中，整数值被视为32位整数，有些实现甚至以这种方式进行存储，直到被要求执行一个在数字上有效的指令，而不是在32位整数上。这对于按位操作很重要。<br>在实践中，整数值被视为32位整数，有些实现甚至以这种方式进行存储，直到被要求执行一个在数字上有效的指令，而不是在32位整数上。这对于按位操作很重要。</p>
+<p>支持标准算术运算符，包括加法，减法，模数（或余数）算术等等。还有一个内置的对象，我们之前忘记提到Math，它提供了高级的数学函数和常量：</p>
+<p>Math.sin(3.5);<br>var circumference = 2 <em> Math.PI </em> r;<br>您可以使用内置parseInt()函数将字符串转换为整数。这将转换的基础作为可选的第二个参数，您应该始终提供：</p>
+<p>parseInt(‘123’, 10); // 123<br>parseInt(‘010’, 10); // 10<br>在较老的浏览器中，以“0”开始的字符串被假定为八进制（基数8），但是从2013年开始这种情况就不是这样了。除非您确定了字符串格式，否则您可以在这些较旧的浏览器上获得令人惊讶的结果：</p>
+<p>parseInt(‘010’);  //  8<br>parseInt(‘0x10’); // 16<br>在这里，我们看到该parseInt()函数将第一个字符串视为前导0，而将第二个字符串视为十六进制，因为前导“0x”。在十六进制表示仍不到位 ; 只有八进制已被删除。</p>
+<p>如果你想把一个二进制数转换成一个整数，只要改变基数：</p>
+<p>parseInt(‘11’, 2); // 3<br>同样，您可以使用内置parseFloat()函数来分析浮点数。不像它的parseInt()表弟，parseFloat()总是使用10号基地。</p>
+<p>您也可以使用一元运算+符将值转换为数字：</p>
+<ul>
+<li>‘42’;   // 42</li>
+<li>‘010’;  // 10</li>
+<li>‘0x10’; // 16<br>NaN如果字符串是非数字的，则返回一个特殊的值（简称“不是数字”）：</li>
+</ul>
+<p>parseInt(‘hello’, 10); // NaN<br>NaN是有毒的：如果你提供它作为任何数学运算的输入，结果也将是NaN：</p>
+<p>NaN + 5; // NaN<br>您可以测试NaN使用内置isNaN()函数：</p>
+<p>isNaN(NaN); // true<br>JavaScript也有特殊的价值Infinity和-Infinity：</p>
+<p>1 / 0; //  Infinity<br>-1 / 0; // -Infinity<br>您可以测试Infinity，-Infinity和NaN值使用内置isFinite()功能：</p>
+<p>isFinite(1 / 0); // false<br>isFinite(-Infinity); // false<br>isFinite(NaN); // false<br>该parseInt()和parseFloat()功能解析字符串，直到它们到达一个字符是无效的指定数字格式，然后返回解析到这一点的数量。然而，NaN如果在其中包含无效字符，“+”运算符只是将字符串转换为字符串。只要尝试在控制台中用自己的方法解析字符串“10.2abc”，就能更好地理解这些差异。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/02/概观/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="posts-javascrpt输出" class="article article-type-posts  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
