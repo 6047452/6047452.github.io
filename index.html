@@ -151,6 +151,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-自学微信小程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/15/自学微信小程序/">自学微信小程序</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/15/自学微信小程序/" class="archive-article-date">
+  	<time datetime="2018-03-14T17:52:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="声明此篇文章只是作为本人学习小程序的笔记"><a href="#声明此篇文章只是作为本人学习小程序的笔记" class="headerlink" title="声明此篇文章只是作为本人学习小程序的笔记"></a>声明此篇文章只是作为本人学习小程序的笔记</h1><ul>
+<li>什么是微信小程序</li>
+<li>微信小程序的价值是什么</li>
+<li>微信小程序的可能应用场景</li>
+<li>微信小程序应用的技术</li>
+<li>微信小程序开放的API</li>
+</ul>
+<p>##什么是微信小程序？<br>小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫即可打开应用。也体现了”用完即走”的理念,用户不用关系是否安装太多应用的问题。应用将无处不在，随时可用，但又无需安装卸载。</p>
+<p>##微信小程序的价值是什么？</p>
+<ul>
+<li>对用户而言：<ul>
+<li>把一些低频的app从桌面一刀微信里</li>
+<li>需用户主动搜获或者扫一扫触达，小程序不主动骚扰用户。</li>
+<li>小型商户，机构企业，没必要做完善的app也不具备做自家app的能力，可以使用微信小程序向用户提供服务。</li>
+</ul>
+</li>
+<li>对于企业而言<ul>
+<li>相对于原生app，微信小程序的开发成本降低，但也有局限，对于naive APP,本质上微信小程序和APPstore或应用商店没有区别</li>
+<li>不需要做推广运营，只等着用户来使用即可</li>
+</ul>
+</li>
+</ul>
+<p>##微信小程序的可能应用场景</p>
+<ul>
+<li>o2o服务，典型场景包括打车，外卖，电影，洗衣服，美甲等等，用户因为有了明确的需求所以才会打开应用去做意见特定具体的事，很符合微信小程序“用玩完即走”的特性</li>
+<li>云智能硬件相关。例如各种智能家具设备，无需为了一些小程序安装一个软件。</li>
+<li>电商（微店）。有赞，微店这些靠微信生态发展起来的产品，可以通过小程序服务客户。</li>
+<li>企业服务窗。最典型的例如银行，政府，电信运营商等的服务窗口可以坐在小程序上，例如可以设计一个小型的IM作为实时客服优化客服体验</li>
+</ul>
+<p>##微信小程序应用的技术</p>
+<ul>
+<li>小程序使用的是一套全新的技术规范和技术架构，它是微信独有的，它借鉴了许多前端开发的技术理念，例如它用到了react实现组件，例如用vue实现标签式逻辑与数据绑定，甚至用CMD的require最为面向对象的js引入。</li>
+<li>小程序不是标准化的H5+css3+javascript，也就是说小程序其实和w3c规范的那个html5+css3没有关系<ul>
+<li>小程序中没法使用dom，而且页面也不是基于window，document这写内置对象来做编程，这意味着前端领域的绝大部分第三方框架如jquery，Zepto都是不能用的，就更不用提其它UI类的框架（例如各种滚屏框架，chart图标框架，富文本框架等）另外小程序的javascript上下文自带了wx对象，也就是原来公众号开发中的js-sdk的主对象。</li>
+</ul>
+</li>
+<li>小程序的标签不是html，他是借鉴react理念定义出来的一套新的标签库，他只能运行在微信的浏览器下，这意味着我们以往在服务号，企业号，或者通过浏览器访问的前端代码，无法直接移植到小程序里。</li>
+<li>html+css3+js和wxml+wxss+js微信系哦啊程序定义了自己的一套模型，理念上学习了主流前端开发中数据/样式/控制分离，并且省去了各类繁琐的关联配置，而且从规范上规定了每个页面需要有同名的三个文件，各司其职，目前从观察上发现，js文件采用的依然是标准的js语法，wxss中采用了标准的css语法（应该只是部分使用，因为css本事也是基于dom的选择器而言）而wxml与html的区别则比较大。</li>
+<li>小程序的页面不是本地的，无需通过服务端请求，任何页面跳转都可以不通过服务端交互，这无疑是比起服务号/企业号等基于h5的模式拥有更加的用户体验，或许接近与原生的app体验。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/15/自学微信小程序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-css实现实心三角形" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -752,86 +854,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/01/20/写给自己的话/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-早上来一发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/19/早上来一发/">早上来一发</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/19/早上来一发/" class="archive-article-date">
-  	<time datetime="2018-01-19T00:33:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="javascript组成及特点"><a href="#javascript组成及特点" class="headerlink" title="javascript组成及特点"></a>javascript组成及特点</h2><p>组成：</p>
-<ul>
-<li><p>ECMAScript，描述了该语言的语法和基本对象</p>
-</li>
-<li><p>文档对象模型（DOM），描述处理网页内容的方法和接口。</p>
-</li>
-<li><p>浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口</p>
-</li>
-</ul>
-<p>特点：</p>
-<ul>
-<li>是一种解释性脚本语言（代码不进行预编译）。</li>
-<li>主要用来向HTML（标准通用标记语言下的一个应用）页面添加交互行为。</li>
-<li>可以直接嵌入HTML页面，但协会才能单独的js文件有利于结构和行为的分离。</li>
-<li>跨平台特性，在绝大多数的浏览器的支持下，可以在多种平台下运行（如windows、linx、Mac、android、ios）</li>
-</ul>
-        
-          <a class="article-more-a" href="/2018/01/19/早上来一发/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/19/早上来一发/">展开全文 >></a>
         </p>
       
 
