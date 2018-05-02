@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/05/02/vue-router初级/index.html">
 <meta property="og:site_name" content="将就的窝">
 <meta property="og:description" content="简介：由于Vue在开发时对路由支持的不足，后来官方补充了vue-router插件，它在vue的生态环境中非常重要，在实际开发中只要编写一个页面就会操作 vue-router。要学习Vue-router就要知道这里的路由是什么？这里的路由就是spa（单页面应用）的路径管理器。在通俗的说，vue-router就是我们WebApp的链接路径管理系统。 有的小伙伴会疑虑，为什么不能像a标签哪样写链接呢？因">
-<meta property="og:updated_time" content="2018-05-02T12:19:36.914Z">
+<meta property="og:updated_time" content="2018-05-02T12:23:50.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-router">
 <meta name="twitter:description" content="简介：由于Vue在开发时对路由支持的不足，后来官方补充了vue-router插件，它在vue的生态环境中非常重要，在实际开发中只要编写一个页面就会操作 vue-router。要学习Vue-router就要知道这里的路由是什么？这里的路由就是spa（单页面应用）的路径管理器。在通俗的说，vue-router就是我们WebApp的链接路径管理系统。 有的小伙伴会疑虑，为什么不能像a标签哪样写链接呢？因">
@@ -182,20 +182,19 @@
 <p>export default new Router({<br>  routes: [              //配置路由，这里是个数组<br>    {                    //每一个链接都是一个对象<br>      path: ‘/‘,         //链接路径<br>      name: ‘Hello’,     //路由名称，<br>      component: Hello   //对应的组件模板<br>    }<br>  ]<br>})</p>
 <p>上边的代码中已经对每行都进行了注释,其实在这个路由文件里只配置了一个功能,就是在进入项目时,显示Hellow.vue里面的内容代码</p>
 <p>###增加一个Hi的路由和页面<br>对路由的核心文件熟悉后,我们增加一个路由配置,我们希望在地址栏输入 <a href="http://localhost:8080/#/hi" target="_blank" rel="external">http://localhost:8080/#/hi</a>    的时候会出现一个新的页面,看一下具体操作步骤：</p>
-<p>在src/components目录下，新建 Hi.vue 文件。<br>编写文件内容，和我们之前讲过的一样，文件要包括三个部分<template><script>和<style>。文件很简单，只是打印一句话。</p>
-<template><br>  <div class="hello"><br>    <h1></h1><br>  </div><br></template>
-
-<p><script><br>export default {<br>  name: ‘hi’,<br>  data () {<br>    return {<br>      msg: ‘Hi, I am JSPang’<br>    }<br>  }<br>}<br>引入 Hi组件：我们在router/index.js文件的上边引入Hi组件<br>import i Hi from ‘@/components/Hi’</p>
+<p>在src/components目录下，新建 Hi.vue 文件。<br>编写文件内容，和我们之前讲过的一样，文件要包括三个部分</p>
+<p>template<br>  div class=”hello”<br>    h1/h1<br>  /div<br>/template</p>
+<p>export default {<br>  name: ‘hi’,<br>  data () {<br>    return {<br>      msg: ‘Hi, I am JSPang’<br>    }<br>  }<br>}<br>引入 Hi组件：我们在router/index.js文件的上边引入Hi组件<br>import i Hi from ‘@/components/Hi’</p>
 <p>增加路由配置：在router/index.js文件的routes[]数组中，新增加一个对象，代码如下<br>{<br>  path:’/hi’,<br>  name:’Hi’,<br>  component:Hi<br>}</p>
 <p>通过上面的配置已经可以增加一个新的页面了。是不是觉的自己的Vue功力一下子就提升了一个档次。为了方便小伙伴查看，贴出现在的路由配置文件:<br>import Vue from ‘vue’   //引入Vue<br>import Router from ‘vue-router’  //引入vue-router<br>import Hello from ‘@/components/Hello’  //引入根目录下的Hello.vue组件<br>import Hi from ‘@/components/Hi’ </p>
 <p>Vue.use(Router)  //Vue全局使用Router</p>
 <p>export default new Router({<br>  routes: [              //配置路由，这里是个数组<br>    {                    //每一个链接都是一个对象<br>      path: ‘/‘,         //链接路径<br>      name: ‘Hello’,     //路由名称，<br>      component: Hello   //对应的组件模板<br>    },{<br>      path:’/hi’,<br>      name:’Hi’,<br>      component:Hi<br>    }<br>  ]<br>})</p>
-<h3 id="router-link制作导航"><a href="#router-link制作导航" class="headerlink" title="router-link制作导航"></a>router-link制作导航</h3><p>现在通过在地址栏改变字符串地址，已经可以实现页面内容的变化了。这并不满足需求，我们需要的是在页面上有个像样的导航链接，我们只要点击就可以实现页面内容的变化。制作链接需要<router-link>标签，我们先来看一下它的语法。<br> <router-link to="/">[显示字段]</router-link><br> to：是我们的导航路径，要填写的是你在router/index.js文件里配置的path值，如果要导航到默认首页，只需要写成  to=”/”  ，<br>[显示字段] ：就是我们要显示给用户的导航名称，比如首页  新闻页。</p>
+<h3 id="router-link制作导航"><a href="#router-link制作导航" class="headerlink" title="router-link制作导航"></a>router-link制作导航</h3><p>现在通过在地址栏改变字符串地址，已经可以实现页面内容的变化了。这并不满足需求，我们需要的是在页面上有个像样的导航链接，我们只要点击就可以实现页面内容的变化。制作链接需要<router-link>标签，我们先来看一下它的语法。<br> <router-link to="/">[显示字段]</router-link><br> to：是我们的导航路径，要填写的是你在router/index.js文件里配置的path值，如果要导航到默认首页，只需要写成  to=”/”  ，<br>[显示字段] ：就是我们要显示给用户的导航名称，比如首页  新闻页。</router-link></p>
 <p>明白了router-link的基本语法，我们在 src/App.vue文件中的template里加入下面代码，实现导航。</p>
 <p>导航 ：<br>   <router-link to="/">首页</router-link><br>   <router-link to="/hi">Hi页面</router-link><br></p>
 
-<p>总结：这节课我们在vue-cli的构建下对vue-router有了一个基本的了解，学会了vue-router的核心文件的基本结构，学会了如何添加一个新的模板页面，还学会了用<router-link>标签设置导航。</p>
-</script></template></p>
+<p>总结：这节课我们在vue-cli的构建下对vue-router有了一个基本的了解，学会了vue-router的核心文件的基本结构，学会了如何添加一个新的模板页面，还学会了用<router-link>标签设置导航。</router-link></p>
+
       
 
       
