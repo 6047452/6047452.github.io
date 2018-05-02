@@ -151,90 +151,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/02/vue-router/">vue-router</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/02/vue-router/" class="archive-article-date">
-  	<time datetime="2018-05-02T11:57:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><p>由于Vue在开发时对路由支持的不足，后来官方补充了vue-router插件，它在vue<br>的生态环境中非常重要，在实际开发中只要编写一个页面就会操作 vue-router。<br>要学习Vue-router就要知道这里的路由是什么？这里的路由就是spa（单页面应用）的路径管理器。<br>在通俗的说，vue-router就是我们WebApp的链接路径管理系统。</p>
-<p>有的小伙伴会疑虑，为什么不能像a标签哪样写链接呢？因为我们用Vue做的都是单页面应用，你必须使用vue-router来进行管理。</p>
-<h3 id="第一节-Vue-router入门"><a href="#第一节-Vue-router入门" class="headerlink" title="第一节 Vue-router入门"></a>第一节 Vue-router入门</h3><p>安装vue-router<br>vue-router是一个插件包，所以我们还是需要用npm来进行安装的。打开命令行工具，进入你的项目，目录，输入命令，     npm install vue-router –save-dev<br>如果你安装的很慢，也可以用cnpm进行安装，若果你在使用cue-cli中已经选择安装了vue-router，那这里就不需要从新安装了。</p>
-<p>###解读router/index.js文件<br>我们用vue-cli产生了我们的项目结构，你可以在src/router/index.js文件，这个文件就是路由的核心文件</p>
-<p>import Vue from ‘vue’   //引入Vue<br>import Router from ‘vue-router’  //引入vue-router<br>import Hello from ‘@/components/Hello’  //引入根目录下的Hello.vue组件</p>
-<p>Vue.use(Router)  //Vue全局使用Router</p>
-<p>export default new Router({<br>  routes: [              //配置路由，这里是个数组<br>    {                    //每一个链接都是一个对象<br>      path: ‘/‘,         //链接路径<br>      name: ‘Hello’,     //路由名称，<br>      component: Hello   //对应的组件模板<br>    }<br>  ]<br>})</p>
-<p>上边的代码中已经对每行都进行了注释,其实在这个路由文件里只配置了一个功能,就是在进入项目时,显示Hellow.vue里面的内容代码</p>
-<p>###增加一个Hi的路由和页面<br>对路由的核心文件熟悉后,我们增加一个路由配置,我们希望在地址栏输入 <a href="http://localhost:8080/#/hi" target="_blank" rel="external">http://localhost:8080/#/hi</a>    的时候会出现一个新的页面,看一下具体操作步骤：</p>
-<p>在src/components目录下，新建 Hi.vue 文件。<br>编写文件内容，和我们之前讲过的一样，文件要包括三个部分<template><script>和<style>。文件很简单，只是打印一句话。</p>
-<template><br>  <div class="hello"><br>    <h1></h1><br>  </div><br></template>
-
-<p><script><br>export default {<br>  name: ‘hi’,<br>  data () {<br>    return {<br>      msg: ‘Hi, I am JSPang’<br>    }<br>  }<br>}<br>引入 Hi组件：我们在router/index.js文件的上边引入Hi组件<br>import i Hi from ‘@/components/Hi’</p>
-<p>增加路由配置：在router/index.js文件的routes[]数组中，新增加一个对象，代码如下<br>{<br>  path:’/hi’,<br>  name:’Hi’,<br>  component:Hi<br>}</p>
-<p>通过上面的配置已经可以增加一个新的页面了。是不是觉的自己的Vue功力一下子就提升了一个档次。为了方便小伙伴查看，贴出现在的路由配置文件:<br>import Vue from ‘vue’   //引入Vue<br>import Router from ‘vue-router’  //引入vue-router<br>import Hello from ‘@/components/Hello’  //引入根目录下的Hello.vue组件<br>import Hi from ‘@/components/Hi’ </p>
-<p>Vue.use(Router)  //Vue全局使用Router</p>
-<p>export default new Router({<br>  routes: [              //配置路由，这里是个数组<br>    {                    //每一个链接都是一个对象<br>      path: ‘/‘,         //链接路径<br>      name: ‘Hello’,     //路由名称，<br>      component: Hello   //对应的组件模板<br>    },{<br>      path:’/hi’,<br>      name:’Hi’,<br>      component:Hi<br>    }<br>  ]<br>})</p>
-<h3 id="router-link制作导航"><a href="#router-link制作导航" class="headerlink" title="router-link制作导航"></a>router-link制作导航</h3><p>现在通过在地址栏改变字符串地址，已经可以实现页面内容的变化了。这并不满足需求，我们需要的是在页面上有个像样的导航链接，我们只要点击就可以实现页面内容的变化。制作链接需要<router-link>标签，我们先来看一下它的语法。<br> <router-link to="/">[显示字段]</router-link><br> to：是我们的导航路径，要填写的是你在router/index.js文件里配置的path值，如果要导航到默认首页，只需要写成  to=”/”  ，<br>[显示字段] ：就是我们要显示给用户的导航名称，比如首页  新闻页。</p>
-<p>明白了router-link的基本语法，我们在 src/App.vue文件中的template里加入下面代码，实现导航。</p>
-<p>导航 ：<br>   <router-link to="/">首页</router-link><br>   <router-link to="/hi">Hi页面</router-link><br></p>
-
-<p>总结：这节课我们在vue-cli的构建下对vue-router有了一个基本的了解，学会了vue-router的核心文件的基本结构，学会了如何添加一个新的模板页面，还学会了用<router-link>标签设置导航。</p>
-</script></template></p>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/02/vue-router/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-vue-router初级" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -323,7 +239,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: vue-router<br>date: 2018-05-01 22:57:03<br>tags:</p>
+        <p>title: Vue-需求<br>date: 2018-05-01 22:57:03<br>tags:</p>
 <pre><code>    你可以在命令行工具里输入npm -v  检测你是否安装了 vue-cli
     若果没安装,你可以用命令安装 npm install vue-cli -g
     -g 代表全局安装
@@ -938,6 +854,81 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/02/02/概观/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="posts-javascrpt输出" class="article article-type-posts  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/30/javascrpt输出/">javascrpt输出</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/30/javascrpt输出/" class="archive-article-date">
+  	<time datetime="2018-01-30T04:56:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="javascript显示数据"><a href="#javascript显示数据" class="headerlink" title="javascript显示数据"></a>javascript显示数据</h1><p>javascript可以通过不同的方式来输出数据：</p>
+<ul>
+<li>使用window.alert() 弹出警告框。</li>
+<li>使用document.write()方法将内容写到HTML文档中。</li>
+<li>使用innerHTML写入到HTML元素。</li>
+<li>使用console.log()写入到浏览器的控制台。</li>
+</ul>
+<h1 id="使用window-alert"><a href="#使用window-alert" class="headerlink" title="使用window.alert()"></a>使用window.alert()</h1><p>你可以弹出警告框来显示数据：<br><img src="/images/alert.png" alt="Alt text"></p>
+<h1 id="操作HTML元素"><a href="#操作HTML元素" class="headerlink" title="操作HTML元素"></a>操作HTML元素</h1><p>如需从javascript访问某个HTML元素，您可以使用documrnt.getElementById(id)方法。<br>请使用id属性来标识HTML元素，并innerHTML来获取或插入元素内容：<br><img src="/images/html.png" alt="Alt text"><br>以上javascript语句可以在web浏览器中执行：<br>document.getELementById(‘demo’)是使用id属性来查找HTMl元素的javascript代码。<br>innerHTML=’段落已修改’是用于修改元素的HTMl内容（innerHTML）的javascript代码</p>
+<h1 id="写到控制台"><a href="#写到控制台" class="headerlink" title="写到控制台"></a>写到控制台</h1><p>如果您的浏览器支持调试，你可以使用console.log方法在浏览器中显示javascript值。<br>浏览器中使用f12来启用调试模式，在调试窗口中点击COnsole菜单。<br><img src="/images/console.png" alt="Alt text"></p>
+<h1 id="笔记列表"><a href="#笔记列表" class="headerlink" title="笔记列表"></a>笔记列表</h1><p>console.log的用处主要是方便你调试javascript用的，你可以看到你在页面中输出内容。<br>相比alert他的优点是：<br>他能看到结构化的东西，如果是alert，弹出一个对象就是object但是console.log能看到内容。<br>console.log不会打断你页面的操作，如果用alert弹出来内容，那么页面就死了，但是console.log输出出来你的页面还可以正常操作</p>
+<p>document.write是直接写入到页面的内容流，如果在写之前没有调用document.open, 浏览器会自动调用open。每次写完关闭之后重新调用该函数，会导致页面被重写。<br>innerHTML则是DOM页面元素的一个属性，代表该元素的html内容。你可以精确到某一个具体的元素来进行更改。如果想修改document的内容，则需要修改document.documentElement.innerElement。<br>innerHTML很多情况下都优于document.write，其原因在于其允许更精确的控制要刷新页面的那一个部分。</p>
+<p>DOM 解释<br>您会经常看到 document.getElementById(“id”)。<br>这个方法是 HTML DOM 中定义的。<br>DOM (Document Object Model)（文档对象模型）是用于访问 HTML 元素的正式 W3C 标准。<br>那些老旧的实例可能会在 &lt; script &gt; 标签中使用 type=”text/javascript”。<br>现在已经不必这样做了。<br>JavaScript 是所有现代浏览器以及 HTML5 中的默认脚本语言。<br>脚本位置<br>在 &lt; head &gt; 或者 &lt; body &gt; 的JavaScript<br>外部脚本不能包含 &lt; script &gt; 标签。<br>输出数据<br>window.alert() 弹出警告框。<br>document.write() 方法将内容写到 HTML 文档中。<br>innerHTML 写入到 HTML 元素。<br>console.log() 写入到浏览器的控制台。<br>输出内容<br>使用 document.write() 向文档输出写内容。<br>如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖<br>写到控制台(调试模式)<br>使用 console.log() 方法在浏览器中显示 JavaScript 值。<br>F12 启用调试模式， 在调试窗口中点击 “Console” 菜单。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/30/javascrpt输出/">展开全文 >></a>
         </p>
       
 
