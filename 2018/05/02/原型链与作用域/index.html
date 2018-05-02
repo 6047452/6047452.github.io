@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 将就的窝</title>
+  <title>原型链与作用域 | 将就的窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="将就的窝">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="什么是作用域,什么是原型链。    作用域是针对变量的,比如我们创建了一个函数,函数里又包含了一个函数,那么此时就存在三个作用域    全局作用域==&amp;gt;函数1作用域==&amp;gt;函数2作用域    作用域的特点就是的,先在自己的变量范围中查找,如果找不到就会沿着作用域往上找。    如： var a = 1; function b(){ var a = 2; function c(){">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型链与作用域">
+<meta property="og:url" content="http://yoursite.com/2018/05/02/原型链与作用域/index.html">
 <meta property="og:site_name" content="将就的窝">
+<meta property="og:description" content="什么是作用域,什么是原型链。    作用域是针对变量的,比如我们创建了一个函数,函数里又包含了一个函数,那么此时就存在三个作用域    全局作用域==&amp;gt;函数1作用域==&amp;gt;函数2作用域    作用域的特点就是的,先在自己的变量范围中查找,如果找不到就会沿着作用域往上找。    如： var a = 1; function b(){ var a = 2; function c(){">
+<meta property="og:updated_time" content="2018-05-02T13:30:29.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将就的窝">
+<meta name="twitter:title" content="原型链与作用域">
+<meta name="twitter:description" content="什么是作用域,什么是原型链。    作用域是针对变量的,比如我们创建了一个函数,函数里又包含了一个函数,那么此时就存在三个作用域    全局作用域==&amp;gt;函数1作用域==&amp;gt;函数2作用域    作用域的特点就是的,先在自己的变量范围中查找,如果找不到就会沿着作用域往上找。    如： var a = 1; function b(){ var a = 2; function c(){">
   
     <link rel="alternative" href="/atom.xml" title="将就的窝" type="application/atom+xml">
   
@@ -149,268 +153,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="posts-原型链与作用域" class="article article-type-posts " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原型链与作用域
+    </h1>
+  
+
+        
+        <a href="/2018/05/02/原型链与作用域/" class="archive-article-date">
+  	<time datetime="2018-05-02T13:25:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是作用域,什么是原型链。<br>    作用域是针对变量的,比如我们创建了一个函数,函数里又包含了一个函数,那么此时就存在三个作用域<br>    全局作用域==&gt;函数1作用域==&gt;函数2作用域<br>    作用域的特点就是的,先在自己的变量范围中查找,如果找不到就会沿着作用域往上找。<br>    如：</p>
+<pre><code>var a = 1;
+function b(){
+var a = 2;
+function c(){
+    var a = 3;
+    console.log(a);
+}
+c();
+</code></pre><p>}<br>b();</p>
+<p>最后打印出来的是3,因为执行函数c的时候他在自己的范围内找到了变量a所以就不会继续往上查找,如果在函数c()中没有找到则会继续向上找，一直会找到全局变量a，这个查找的过程就叫作用域链。</p>
+<p>不知道你有没有疑问，函数c为什么可以在函数b中查找变量a，因为函数c是在函数b中创建的，也就是说函数c的作用域包括了函数b的作用域，当然也包括了全局作用域，但是函数b不能向函数c中查找变量，因为作用域只会向上查找。</p>
+<p>那么什么是原型链呢？</p>
+<p>　　原型链是针对构造函数的，比如我先创建了一个函数，然后通过一个变量new了这个函数，那么这个被new出来的函数就会继承创建出来的那个函数的属性，然后如果我访问new出来的这个函数的某个属性，但是我并没有在这个new出来的函数中定义这个变量，那么它就会往上（向创建出它的函数中）查找，这个查找的过程就叫做原型链。</p>
+<p>　　Object ==&gt; 构造函数1 ==&gt; 构造函数2</p>
+<p>　　就和css中的继承一样，如果自身没有定义就会继承父元素的样式。</p>
+<pre><code>function a(){};
+a.prototype.name = &quot;追梦子&quot;;
+var b = new a();
+console.log(b.name); //追梦子
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>嗯。。。。。郁闷<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-posts">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/30/javascrpt输出/" class="archive-article-date">
-  	<time datetime="2018-01-30T04:56:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/30/javascrpt输出/">javascrpt输出</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/02/原型链与作用域/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-posts">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/30/javascript用法/" class="archive-article-date">
-  	<time datetime="2018-01-30T04:43:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/02/vue-router初级/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue-router</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/30/javascript用法/">javascript用法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-posts">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/30/基于菜鸟教程的js/" class="archive-article-date">
-  	<time datetime="2018-01-30T04:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/30/基于菜鸟教程的js/">基于菜鸟教程的js</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/29/前端的价值/" class="archive-article-date">
-  	<time datetime="2018-01-29T10:14:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/29/前端的价值/">前端的价值</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/29/预练js，必先攻cs/" class="archive-article-date">
-  	<time datetime="2018-01-29T06:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/29/预练js，必先攻cs/">预练js，必先攻cs</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/23/郁闷，只能靠码字来发泄一下了/" class="archive-article-date">
-  	<time datetime="2018-01-23T09:57:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/23/郁闷，只能靠码字来发泄一下了/">郁闷，只能靠码字来发泄一下了</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/20/写给自己的话/" class="archive-article-date">
-  	<time datetime="2018-01-19T21:20:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/20/写给自己的话/">写给自己的话</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/19/早上来一发/" class="archive-article-date">
-  	<time datetime="2018-01-19T00:33:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/19/早上来一发/">早上来一发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/18/开始/" class="archive-article-date">
-  	<time datetime="2018-01-18T08:23:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/18/开始/">开始</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -434,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
